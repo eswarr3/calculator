@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+<center>
+    <div class="login-box">
+        <h2>Login Page</h2>
+    </center>
+        <form>
+        <center>    
+            <label for="name">Name :</label>
+            <input type="text" id="name" placeholder="Enter your Name" required>
+            <br>
+        </center>
+
+        <center>
+            <label for="email">Email :</label>
+            <input type="email" id="email" placeholder="Enter your Email" required>
+            <br>
+        </center>
+        <center>
+            <label for="password">Password :</label>
+            <input type="password" id="password" placeholder="Enter your Password" required>
+            <br>
+            <button type="submit" class="submit-btn">Submit</button>
+        </center>
+            
+        </form>
+
+    <div class="container">
+        <div class="Calculator">
+            <input type="=text" placeholder="0" id="output-Screen">
+            <button onclick="Clear()">Cl</button>
+            <button onclick="del()">DEL</button>
+            <button onclick="display('%')">%</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="Calculate()" class="equal">=</button>
+           
+
+        </div>
+    </div>
+    <script>
+        let screen = document.getElementById("output-Screen");
+    
+        function display(value) {
+            screen.value += value;
+        }
+    
+        function Clear() {
+            screen.value = "";
+        }
+    
+        function del() {
+            screen.value = screen.value.slice(0, -1);
+        }
+    
+        function Calculate() {
+            try {
+                screen.value = eval(screen.value);
+            } catch (error) {
+                screen.value = "Error";
+            }
+        }
+    </script>
+</body>
+</html>
